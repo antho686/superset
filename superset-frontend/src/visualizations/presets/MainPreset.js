@@ -81,6 +81,7 @@ import { PivotTableChartPlugin as PivotTableChartPluginV2 } from '@superset-ui/p
 import { HandlebarsChartPlugin } from '@superset-ui/plugin-chart-handlebars';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
 import TimeTableChartPlugin from '../TimeTable';
+import { VerseDataFirstPlugin } from 'verse-data-first-plugin';
 
 export default class MainPreset extends Preset {
   constructor() {
@@ -167,6 +168,7 @@ export default class MainPreset extends Preset {
         new EchartsTreeChartPlugin().configure({ key: 'tree_chart' }),
         new HandlebarsChartPlugin().configure({ key: 'handlebars' }),
         ...experimentalplugins,
+	new VerseDataFirstPlugin().configure({ key: 'ext_verseData' }),
       ],
     });
   }
